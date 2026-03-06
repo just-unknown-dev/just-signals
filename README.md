@@ -6,7 +6,6 @@ A high-performance signal-driven state management package for **just_game_engine
 
 - **Core Signals**: Reactive primitives (`Signal`, `Computed`, `Effect`) with surgical precision updates
 - **Memory Layer**: Zero-GC memory pooling with typed arrays (`MemoryArena`, `ObjectPool`)
-- **ECS Integration**: Reactive wrappers for Entity-Component-System (`ComponentSignal`, `EntitySignal`, `WorldSignal`)
 - **Flutter Widgets**: Efficient rebuilding with `SignalBuilder` and `SignalConsumer`
 - **Async Support**: `AsyncSignal`, `StreamSignal`, and `FutureSignal` for async operations
 
@@ -164,6 +163,14 @@ bulletPool.release(bullet);
 
 ## ECS Integration
 
+The reactive ECS classes — `ComponentSignal`, `EntitySignal`, `WorldSignal`,
+`ReactiveSystem`, and `ReactiveComponent` — are provided by the `just_game_engine`
+package, which depends on `just_signals`. Import them from there:
+
+```dart
+import 'package:just_game_engine/just_game_engine.dart';
+```
+
 ### ComponentSignal
 
 Reactive access to component properties:
@@ -264,29 +271,29 @@ SignalBuilder(
 ## Architecture Overview
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                    Flutter UI Layer                      │
+┌────────────────────────────────────────────────────────┐
+│                    Flutter UI Layer                    │
 │  ┌─────────────┐ ┌──────────────┐ ┌─────────────────┐  │
 │  │SignalBuilder│ │SignalConsumer│ │ SignalSelector  │  │
 │  └──────┬──────┘ └──────┬───────┘ └────────┬────────┘  │
 └─────────┼───────────────┼──────────────────┼───────────┘
           │               │                  │
 ┌─────────┴───────────────┴──────────────────┴───────────┐
-│                    Signals Layer                        │
+│              just_signals — Signals Layer               │
 │  ┌──────┐   ┌────────┐   ┌──────┐   ┌───────────────┐  │
 │  │Signal│   │Computed│   │Effect│   │ AsyncSignal   │  │
 │  └──┬───┘   └───┬────┘   └──┬───┘   └───────────────┘  │
 └─────┼───────────┼───────────┼──────────────────────────┘
       │           │           │
 ┌─────┴───────────┴───────────┴──────────────────────────┐
-│                  ECS Integration                        │
+│         just_game_engine — ECS Integration             │
 │  ┌───────────────┐  ┌────────────┐  ┌──────────────┐   │
 │  │ComponentSignal│  │EntitySignal│  │ReactiveSystem│   │
 │  └───────────────┘  └────────────┘  └──────────────┘   │
 └────────────────────────────────────────────────────────┘
       │
 ┌─────┴──────────────────────────────────────────────────┐
-│                  Memory Layer (Zero-GC)                 │
+│         just_signals — Memory Layer (Zero-GC)          │
 │  ┌───────────┐    ┌──────────┐    ┌───────────────┐    │
 │  │MemoryArena│    │ObjectPool│    │ PoolManager   │    │
 │  └───────────┘    └──────────┘    └───────────────┘    │
@@ -295,4 +302,4 @@ SignalBuilder(
 
 ## License
 
-MIT License - see LICENSE file for details.
+BSD 3-Clause License - see LICENSE file for details.
