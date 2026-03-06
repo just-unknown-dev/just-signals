@@ -1,3 +1,9 @@
+## [1.0.1] - 2026-03-07
+
+Fixed the git repository URL in `pubspec.yaml` to point to the correct GitHub repository for `just_signals`.
+
+---
+
 ## [1.0.0] - 2026-03-07
 
 Initial stable release of **just_signals** — a high-performance, signal-driven
