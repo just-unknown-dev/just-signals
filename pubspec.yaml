@@ -1,6 +1,6 @@
 name: just_signals
 description: "A high-performance signal-driven state management library for Flutter. Features reactive primitives, zero-GC memory pooling, surgical widget updates, and async signal support."
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/just-unknown-dev/just-signals
 repository: https://github.com/just-unknown-dev/just-signals
 issue_tracker: https://github.com/just-unknown-dev/just-signals/issues
