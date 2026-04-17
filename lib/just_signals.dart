@@ -34,10 +34,7 @@ export 'src/core/scope.dart';
 export 'src/core/selector.dart';
 
 // Memory layer (zero-GC)
-export 'src/memory/memory_arena.dart';
-export 'src/memory/object_pool.dart';
-export 'src/memory/typed_buffer.dart';
-export 'src/memory/pool_manager.dart';
+export 'package:just_memory/just_memory.dart';
 
 // Flutter widgets
 export 'src/widgets/signal_builder.dart';
