@@ -1,3 +1,12 @@
+## [1.0.2] - 2026-04-19
+
+### Changed
+
+- Moved the memory management layer out of `just_signals` into the dedicated `just_memory` package.
+- `ObjectPool`, `RoundRobinPool`, `MemoryArena`, `TypedBuffer`, and `PoolManager` now live in `just_memory` for clearer package boundaries and reuse across the Just ecosystem.
+
+---
+
 ## [1.0.1] - 2026-03-07
 
 Fixed the git repository URL in `pubspec.yaml` to point to the correct GitHub repository for `just_signals`.

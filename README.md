@@ -15,8 +15,7 @@ Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  just_signals:
-    path: ../just_signals  # Or use git/pub reference
+  just_signals: ^1.0.2
 ```
 
 ## Quick Start
